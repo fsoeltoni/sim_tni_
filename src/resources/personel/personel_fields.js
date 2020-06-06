@@ -4,6 +4,10 @@ import jenis_kelamin from "../jenis_kelamin";
 import jenis_kelamin_fields from "../jenis_kelamin/jenis_kelamin_fields";
 import golongan_darah from "../golongan_darah";
 import golongan_darah_fields from "../golongan_darah/golongan_darah_fields";
+import jenjang_kepangkatan from "../jenjang_kepangkatan";
+import jenjang_kepangkatan_fields from "../jenjang_kepangkatan/jenjang_kepangkatan_fields";
+import pangkat from "../pangkat";
+import pangkat_fields from "../pangkat/pangkat_fields";
 
 export default {
   id: {
@@ -50,6 +54,24 @@ export default {
     reference: golongan_darah.name,
     sort: {
       field: golongan_darah_fields.id.source,
+      order: "ASC",
+    },
+  },
+  jenjang_kepangkatan: {
+    source: jenjang_kepangkatan.name + "_id",
+    label: jenjang_kepangkatan.options.label,
+    reference: jenjang_kepangkatan.name,
+    sort: {
+      field: jenjang_kepangkatan_fields.id.source,
+      order: "ASC",
+    },
+  },
+  pangkat: {
+    source: pangkat.name + "_id",
+    label: pangkat.options.label,
+    reference: pangkat.name,
+    sort: {
+      field: pangkat_fields.id.source,
       order: "ASC",
     },
   },
