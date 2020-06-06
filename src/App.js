@@ -9,9 +9,13 @@ import golongan_darah from "./resources/golongan_darah";
 import jenjang_kepangkatan from "./resources/jenjang_kepangkatan";
 import pangkat from "./resources/pangkat";
 import korps from "./resources/korps";
+import lingkup from "./resources/lingkup";
+import jenis_pomdam from "./resources/jenis_pomdam";
 
 const App = () => (
   <Admin title={TITLE} dataProvider={data}>
+    <Resource {...jenis_pomdam} />
+    <Resource {...lingkup} />
     <Resource {...personel} />
     <Resource {...jenis_personel} />
     <Resource {...jenis_kelamin} />
