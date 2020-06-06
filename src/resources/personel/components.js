@@ -19,6 +19,7 @@ const {
   tempat_lahir,
   tanggal_lahir,
   jenis_kelamin,
+  golongan_darah,
 } = personel_fields;
 
 const create = (props) => {
@@ -32,6 +33,9 @@ const create = (props) => {
         <NoIdentitasInput />
         <TempatTanggalLahirInput />
         <ReferenceInput {...jenis_kelamin}>
+          <SelectInput optionText="nama" />
+        </ReferenceInput>
+        <ReferenceInput {...golongan_darah}>
           <SelectInput optionText="nama" />
         </ReferenceInput>
       </SimpleForm>

@@ -2,6 +2,8 @@ import jenis_personel from "../jenis_personel";
 import jenis_personel_fields from "../jenis_personel/jenis_personel_fields";
 import jenis_kelamin from "../jenis_kelamin";
 import jenis_kelamin_fields from "../jenis_kelamin/jenis_kelamin_fields";
+import golongan_darah from "../golongan_darah";
+import golongan_darah_fields from "../golongan_darah/golongan_darah_fields";
 
 export default {
   id: {
@@ -39,6 +41,15 @@ export default {
     reference: jenis_kelamin.name,
     sort: {
       field: jenis_kelamin_fields.id.source,
+      order: "ASC",
+    },
+  },
+  golongan_darah: {
+    source: golongan_darah.name + "_id",
+    label: golongan_darah.options.label,
+    reference: golongan_darah.name,
+    sort: {
+      field: golongan_darah_fields.id.source,
       order: "ASC",
     },
   },
