@@ -8,6 +8,7 @@ import jenis_kelamin from "./resources/jenis_kelamin";
 import golongan_darah from "./resources/golongan_darah";
 import jenjang_kepangkatan from "./resources/jenjang_kepangkatan";
 import pangkat from "./resources/pangkat";
+import korps from "./resources/korps";
 
 const App = () => (
   <Admin title={TITLE} dataProvider={data}>
@@ -15,6 +16,7 @@ const App = () => (
     <Resource {...jenis_personel} />
     <Resource {...jenis_kelamin} />
     <Resource {...golongan_darah} />
+    <Resource {...korps} />
     <Resource {...pangkat} />
     <Resource {...jenjang_kepangkatan} />
   </Admin>
