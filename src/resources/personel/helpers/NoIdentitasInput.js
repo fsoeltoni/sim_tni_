@@ -3,7 +3,6 @@ import { NumberInput } from "react-admin";
 import { useFormState } from "react-final-form";
 import personel_fields from "../personel_fields";
 import data from "../../../providers/data";
-import jenis_personel from "../../jenis_personel";
 import jenis_personel_fields from "../../jenis_personel/jenis_personel_fields";
 
 const { no_identitas } = personel_fields;
@@ -19,7 +18,7 @@ const NoIdentitasInput = (props) => {
       setShow(true);
 
       data
-        .getOne(jenis_personel.name, { id: jenis_personel_id })
+        .getOne("jenis_personel", { id: jenis_personel_id })
         .then(({ data: res }) => {
           if (res) {
             setLabel(res[jenis_personel_fields.label_no_identitas.source]);

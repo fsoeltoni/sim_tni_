@@ -3,13 +3,14 @@ import { ReferenceInput, SelectInput, FormDataConsumer } from "react-admin";
 import { useForm } from "react-final-form";
 import personel_fields from "../personel_fields";
 
-const { jenis_personel, jenjang_kepangkatan, pangkat } = personel_fields;
+const { jenis_personel, jenjang_kepangkatan, pangkat, korps } = personel_fields;
 
 const JenjangKepangkatanInput = (props) => {
   const form = useForm();
 
   const onChange = (e) => {
     form.change(pangkat.source, null);
+    form.change(korps.source, null);
   };
 
   return (

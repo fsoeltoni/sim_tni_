@@ -23,4 +23,8 @@ export default {
     source: "kode",
     label: "Kode",
   },
+  cantumkan_korps: {
+    source: "cantumkan_korps",
+    label: "Cantumkan Korps",
+  },
 };

@@ -5,20 +5,28 @@ import {
   ReferenceInput,
   SelectInput,
   TextInput,
+  BooleanInput,
   Edit,
   List,
   Datagrid,
   TextField,
   ReferenceField,
+  BooleanField,
   DeleteButton,
   EditButton,
   ShowButton,
   Show,
   SimpleShowLayout,
 } from "react-admin";
-import golongan_darah_fields from "./jenjang_kepangkatan_fields";
+import jenjang_kepangkatan_fields from "./jenjang_kepangkatan_fields";
 
-const { id, jenis_personel, nama, kode } = golongan_darah_fields;
+const {
+  id,
+  jenis_personel,
+  nama,
+  kode,
+  cantumkan_korps,
+} = jenjang_kepangkatan_fields;
 
 const create = (props) => {
   return (
@@ -29,6 +37,7 @@ const create = (props) => {
         </ReferenceInput>
         <TextInput {...nama} />
         <TextInput {...kode} />
+        <BooleanInput {...cantumkan_korps} />
       </SimpleForm>
     </Create>
   );
@@ -44,6 +53,7 @@ const edit = (props) => {
         </ReferenceInput>
         <TextInput {...nama} />
         <TextInput {...kode} />
+        <BooleanInput {...cantumkan_korps} />
       </SimpleForm>
     </Edit>
   );
@@ -59,6 +69,7 @@ const list = (props) => {
         </ReferenceField>
         <TextField {...nama} />
         <TextField {...kode} />
+        <BooleanField {...cantumkan_korps} />
         <DeleteButton />
         <EditButton />
         <ShowButton />
@@ -77,6 +88,7 @@ const show = (props) => {
         </ReferenceField>
         <TextField {...nama} />
         <TextField {...kode} />
+        <BooleanField {...cantumkan_korps} />
       </SimpleShowLayout>
     </Show>
   );

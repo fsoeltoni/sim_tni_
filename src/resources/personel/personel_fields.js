@@ -8,6 +8,8 @@ import jenjang_kepangkatan from "../jenjang_kepangkatan";
 import jenjang_kepangkatan_fields from "../jenjang_kepangkatan/jenjang_kepangkatan_fields";
 import pangkat from "../pangkat";
 import pangkat_fields from "../pangkat/pangkat_fields";
+import korps from "../korps";
+import korps_fields from "../korps/korps_fields";
 
 export default {
   id: {
@@ -74,5 +76,22 @@ export default {
       field: pangkat_fields.id.source,
       order: "ASC",
     },
+  },
+  korps: {
+    source: korps.name + "_id",
+    label: korps.options.label,
+    reference: korps.name,
+    sort: {
+      field: korps_fields.id.source,
+      order: "ASC",
+    },
+  },
+  jabatan: {
+    source: "jabatan",
+    label: "Jabatan",
+  },
+  no_kt_prajurit: {
+    source: "no_kt_prajurit",
+    label: "No. KT Prajurit",
   },
 };

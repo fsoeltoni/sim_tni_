@@ -13,18 +13,17 @@ import JenisPersonelInput from "./helpers/JenisPersonelInput";
 import TempatTanggalLahirInput from "./helpers/TempatTanggalLahirInput";
 import NoIdentitasInput from "./helpers/NoIdentitasInput";
 import JenjangKepangkatanInput from "./helpers/JenjangKepangkatanInput";
+import KorpsInput from "./helpers/KorpsInput";
+import JenjangKepangkatanPangkatKorpsInput from "./helpers/JenjangKepangkatanPangkatKorpsInput";
 
 const {
-  id,
-  jenis_personel,
   nama,
-  no_identitas,
-  tempat_lahir,
-  tanggal_lahir,
   jenis_kelamin,
   golongan_darah,
   jenjang_kepangkatan,
   pangkat,
+  jabatan,
+  no_kt_prajurit,
 } = personel_fields;
 
 const create = (props) => {
@@ -41,7 +40,7 @@ const create = (props) => {
         <ReferenceInput {...golongan_darah}>
           <SelectInput optionText="nama" />
         </ReferenceInput>
-        <JenjangKepangkatanInput />
+        {/* <JenjangKepangkatanInput />
         <FormDataConsumer subscription={{ values: true }}>
           {({ formData, ...rest }) =>
             formData[jenjang_kepangkatan.source] && (
@@ -54,6 +53,22 @@ const create = (props) => {
               >
                 <SelectInput optionText="kode" />
               </ReferenceInput>
+            )
+          }
+        </FormDataConsumer>
+        <KorpsInput /> */}
+        <JenjangKepangkatanPangkatKorpsInput />
+        <FormDataConsumer subscription={{ values: true }}>
+          {({ formData, ...rest }) =>
+            formData[jenjang_kepangkatan.source] && (
+              <TextInput {...jabatan} {...rest} />
+            )
+          }
+        </FormDataConsumer>
+        <FormDataConsumer subscription={{ values: true }}>
+          {({ formData, ...rest }) =>
+            formData[jenjang_kepangkatan.source] && (
+              <TextInput {...no_kt_prajurit} {...rest} />
             )
           }
         </FormDataConsumer>
