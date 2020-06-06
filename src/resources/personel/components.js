@@ -11,7 +11,15 @@ import personel_fields from "./personel_fields";
 import TempatTanggalLahirInput from "./helpers/TempatTanggalLahirInput";
 import NoIdentitasInput from "./helpers/NoIdentitasInput";
 
-const { id, jenis_personel, nama, no_identitas } = personel_fields;
+const {
+  id,
+  jenis_personel,
+  nama,
+  no_identitas,
+  tempat_lahir,
+  tanggal_lahir,
+  jenis_kelamin,
+} = personel_fields;
 
 const create = (props) => {
   return (
@@ -23,6 +31,9 @@ const create = (props) => {
         <TextInput {...nama} />
         <NoIdentitasInput />
         <TempatTanggalLahirInput />
+        <ReferenceInput {...jenis_kelamin}>
+          <SelectInput optionText="nama" />
+        </ReferenceInput>
       </SimpleForm>
     </Create>
   );

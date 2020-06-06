@@ -1,5 +1,7 @@
 import jenis_personel from "../jenis_personel";
 import jenis_personel_fields from "../jenis_personel/jenis_personel_fields";
+import jenis_kelamin from "../jenis_kelamin";
+import jenis_kelamin_fields from "../jenis_kelamin/jenis_kelamin_fields";
 
 export default {
   id: {
@@ -30,5 +32,14 @@ export default {
   tanggal_lahir: {
     source: "tanggal_lahir",
     label: "Tanggal Lahir",
+  },
+  jenis_kelamin: {
+    source: jenis_kelamin.name + "_id",
+    label: jenis_kelamin.options.label,
+    reference: jenis_kelamin.name,
+    sort: {
+      field: jenis_kelamin_fields.id.source,
+      order: "ASC",
+    },
   },
 };
