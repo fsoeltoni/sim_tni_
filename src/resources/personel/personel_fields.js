@@ -59,6 +59,10 @@ export default {
       order: "ASC",
     },
   },
+  alamat: {
+    source: "alamat",
+    label: "Alamat",
+  },
   jenjang_kepangkatan: {
     source: jenjang_kepangkatan.name + "_id",
     label: jenjang_kepangkatan.options.label,

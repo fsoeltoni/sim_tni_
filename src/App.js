@@ -11,9 +11,11 @@ import pangkat from "./resources/pangkat";
 import korps from "./resources/korps";
 import lingkup from "./resources/lingkup";
 import jenis_pomdam from "./resources/jenis_pomdam";
+import satlak from "./resources/satlak";
 
 const App = () => (
   <Admin title={TITLE} dataProvider={data}>
+    <Resource {...satlak} />
     <Resource {...jenis_pomdam} />
     <Resource {...lingkup} />
     <Resource {...personel} />

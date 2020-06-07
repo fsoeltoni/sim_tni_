@@ -5,23 +5,20 @@ import {
   ReferenceInput,
   SelectInput,
   TextInput,
-  NumberInput,
   FormDataConsumer,
 } from "react-admin";
 import personel_fields from "./personel_fields";
 import JenisPersonelInput from "./helpers/JenisPersonelInput";
 import TempatTanggalLahirInput from "./helpers/TempatTanggalLahirInput";
 import NoIdentitasInput from "./helpers/NoIdentitasInput";
-import JenjangKepangkatanInput from "./helpers/JenjangKepangkatanInput";
-import KorpsInput from "./helpers/KorpsInput";
 import JenjangKepangkatanPangkatKorpsInput from "./helpers/JenjangKepangkatanPangkatKorpsInput";
 
 const {
+  jenis_personel,
   nama,
   jenis_kelamin,
   golongan_darah,
-  jenjang_kepangkatan,
-  pangkat,
+  alamat,
   jabatan,
   no_kt_prajurit,
 } = personel_fields;
@@ -40,34 +37,13 @@ const create = (props) => {
         <ReferenceInput {...golongan_darah}>
           <SelectInput optionText="nama" />
         </ReferenceInput>
-        {/* <JenjangKepangkatanInput />
-        <FormDataConsumer subscription={{ values: true }}>
-          {({ formData, ...rest }) =>
-            formData[jenjang_kepangkatan.source] && (
-              <ReferenceInput
-                {...pangkat}
-                {...rest}
-                filter={{
-                  jenjang_kepangkatan_id: formData[jenjang_kepangkatan.source],
-                }}
-              >
-                <SelectInput optionText="kode" />
-              </ReferenceInput>
-            )
-          }
-        </FormDataConsumer>
-        <KorpsInput /> */}
+        <TextInput {...alamat} />
         <JenjangKepangkatanPangkatKorpsInput />
+        <TextInput {...jabatan} />
         <FormDataConsumer subscription={{ values: true }}>
           {({ formData, ...rest }) =>
-            formData[jenjang_kepangkatan.source] && (
-              <TextInput {...jabatan} {...rest} />
-            )
-          }
-        </FormDataConsumer>
-        <FormDataConsumer subscription={{ values: true }}>
-          {({ formData, ...rest }) =>
-            formData[jenjang_kepangkatan.source] && (
+            formData[jenis_personel.source] &&
+            formData[jenis_personel.source] === 1 && (
               <TextInput {...no_kt_prajurit} {...rest} />
             )
           }
